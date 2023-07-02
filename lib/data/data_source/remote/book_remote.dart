@@ -15,8 +15,8 @@ class BookRemoteDataSource {
 
       return listBooks;
     } catch (e) {
-      print(e.toString());
-      return [];
+      throw e;
+      // print(e.toString());
     }
   }
 }
