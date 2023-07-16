@@ -39,8 +39,9 @@ class HomeView extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                state.listBook.value[index].title,
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                state.listBook.value[index].title ?? 'No Title',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               ),
                               Text(state.listBook.value[index].subtitle),
                             ],
