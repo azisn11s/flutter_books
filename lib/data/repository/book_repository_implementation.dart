@@ -17,4 +17,8 @@ class BookRepositoryImplementation extends BookRepository {
   Future<BookDetailResponse> getBookDetail(String isbn13) async {
     return await remoteDataSource.getBookDetail(isbn13);
   }
+
+  Future<BookDetailResponse> getBookDetailByName(String title) async {
+    return await remoteDataSource.getBookDetailByName(title);
+  }
 }

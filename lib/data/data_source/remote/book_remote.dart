@@ -34,4 +34,18 @@ class BookRemoteDataSource {
       // print(e.toString());
     }
   }
+
+  Future<BookDetailResponse> getBookDetailByName(String title) async {
+    try {
+      final url = 'https://api.itbook.store/1.0/search/$title';
+      final response = await client.get(url);
+      BookDetailResponse bookResponse =
+          BookDetailResponse.fromJson(response.data);
+
+      return bookResponse;
+    } catch (e) {
+      rethrow;
+      // print(e.toString());
+    }
+  }
 }
